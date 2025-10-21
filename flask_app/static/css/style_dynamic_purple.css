@@ -1,0 +1,471 @@
+
+
+:root {
+    --purple-dark: #2d1b52;
+    --purple-medium: #4a148c;
+    --purple-light: #7b1fa2;
+    --purple-accent: #9c27b0;
+    --purple-soft: #ba68c8;
+    --purple-glow: #e1bee7;
+    --white: #ffffff;
+    --shadow: rgba(45, 27, 82, 0.3);
+    --glow: rgba(156, 39, 176, 0.4);
+}
+
+/*  configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====================================================================
+FONDO ANIMADO CON EFECTOS DINÁMICOS
+==================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-medium) 50%, var(--purple-light) 100%);
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+/* Animación del gradiente de fondo */
+@keyframes gradientShift {
+    0%, 100% {
+        background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-medium) 50%, var(--purple-light) 100%);
+    }
+    25% {
+        background: linear-gradient(225deg, var(--purple-medium) 0%, var(--purple-light) 50%, var(--purple-accent) 100%);
+    }
+    50% {
+        background: linear-gradient(45deg, var(--purple-light) 0%, var(--purple-accent) 50%, var(--purple-soft) 100%);
+    }
+    75% {
+        background: linear-gradient(315deg, var(--purple-accent) 0%, var(--purple-medium) 50%, var(--purple-dark) 100%);
+    }
+}
+
+/* Partículas flotantes en el fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, var(--glow) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, var(--glow) 1px, transparent 1px),
+        radial-gradient(circle at 60% 20%, var(--glow) 2px, transparent 2px),
+        radial-gradient(circle at 30% 80%, var(--glow) 1px, transparent 1px),
+        radial-gradient(circle at 90% 40%, var(--glow) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 200px 200px, 120px 120px, 80px 80px;
+    animation: particles 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes particles {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+/* Onda flotante en el fondo */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(ellipse at center, transparent 30%, var(--glow) 70%, transparent 70%);
+    animation: wave 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+/* ====================================================================
+CONTENEDOR PRINCIPAL
+==================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px var(--shadow);
+    animation: headerFloat 3s ease-in-out infinite;
+}
+
+@keyframes headerFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Logo y título */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px var(--glow);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px var(--glow);
+    }
+    to {
+        text-shadow: 0 0 30px var(--glow), 0 0 40px var(--purple-accent);
+    }
+}
+
+/* ====================================================================
+NAVEGACIÓN DINÁMICA
+==================================================================== */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, var(--purple-accent), var(--purple-soft));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+nav a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px var(--shadow);
+    background: linear-gradient(45deg, var(--purple-soft), var(--purple-glow));
+}
+
+/* ====================================================================
+TARJETAS CON EFECTOS GLASS
+==================================================================== */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, var(--glow), transparent);
+    animation: cardRotate 8s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover::before {
+    opacity: 0.1;
+}
+
+@keyframes cardRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px var(--shadow);
+    border-color: var(--purple-accent);
+}
+
+/* ====================================================================
+FORMULARIOS ESTILIZADOS
+==================================================================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px var(--shadow);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--purple-accent);
+    box-shadow: 0 0 20px var(--glow);
+    transform: scale(1.02);
+}
+
+/* ====================================================================
+BOTONES CON EFECTOS DINÁMICOS
+==================================================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, var(--purple-accent), var(--purple-soft));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%);
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.table-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--white);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    background: rgba(156, 39, 176, 0.3);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* ====================================================================
+ALERTAS Y MENSAJES
+==================================================================== */
+.alert {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--purple-accent);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====================================================================
+EFECTOS RESPONSIVE
+==================================================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--purple-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--purple-accent), var(--purple-soft));
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--purple-soft), var(--purple-glow));
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--purple-accent);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.highlight {
+    background: linear-gradient(45deg, var(--purple-accent), var(--purple-soft));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}

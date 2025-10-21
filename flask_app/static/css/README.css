@@ -1,0 +1,40 @@
+/* =============================================
+   🎬 CINEPEDIA - ORGANIZACION CSS FINAL
+   =============================================
+   Descripción de archivos CSS organizados:
+   
+   📁 static/css/
+   ├── 🎨 cinepedia.css      → CSS principal unificado (USAR ESTE)
+   ├── 🧩 components.css     → Componentes separados 
+   ├── 💜 style_main.css     → Estilos originales completos
+   ├── 🎭 style_purple.css   → Tema morado específico
+   └── 📄 style_*.css        → Otros estilos de respaldo
+   
+   ============================================= */
+
+/* 
+   INSTRUCCIONES DE USO:
+   
+   ✅ RECOMENDADO - Usar en todos los templates:
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/cinepedia.css') }}">
+   
+   📦 ALTERNATIVA - Para desarrollo modular:
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style_main.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+   
+   💡 BENEFICIOS DE LA ORGANIZACIÓN:
+   - ✨ Un solo archivo CSS por template
+   - 🔧 Fácil mantenimiento
+   - 🚀 Mejor rendimiento de carga
+   - 📱 Diseño responsive mantenido
+   - 🎨 Animaciones dinámicas preservadas
+   
+   🎯 ESTADO ACTUAL:
+   ✅ Estilos inline extraídos de templates
+   ✅ Clases CSS organizadas por función
+   ✅ Referencias CSS actualizadas en templates
+   ✅ Funcionalidad completa mantenida
+   
+*/
+
+/* Este archivo es solo documentación - usa cinepedia.css */

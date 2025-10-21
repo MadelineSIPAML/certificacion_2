@@ -1,0 +1,837 @@
+/* 🎨 CINEPEDIA - Diseño Moderno con Gradientes Morados Dinámicos */
+
+/* Variables CSS para paleta morada completa */
+:root {
+    /* Tonos morados base */
+    --purple-light: #E6E6FA;
+    --purple-pastel: #DDA0DD;
+    --purple-medium: #BA55D3;
+    --purple-bright: #9932CC;
+    --purple-dark: #8B008B;
+    --purple-deep: #4B0082;
+    --purple-midnight: #301934;
+    --purple-royal: #6A0DAD;
+    --purple-neon: #BF00FF;
+    --purple-violet: #8A2BE2;
+    --purple-indigo: #4B0082;
+    --purple-plum: #663399;
+    
+    /* Gradientes morados dinámicos */
+    --gradient-main: linear-gradient(135deg, 
+        #E6E6FA 0%, 
+        #DDA0DD 12.5%, 
+        #BA55D3 25%, 
+        #9932CC 37.5%, 
+        #8B008B 50%, 
+        #6A0DAD 62.5%, 
+        #4B0082 75%, 
+        #301934 87.5%, 
+        #000000 100%
+    );
+    
+    --gradient-animated: linear-gradient(45deg, 
+        #BF00FF 0%, 
+        #9932CC 14%, 
+        #8A2BE2 28%, 
+        #6A0DAD 42%, 
+        #4B0082 56%, 
+        #8B008B 70%, 
+        #BA55D3 84%, 
+        #DDA0DD 100%
+    );
+    
+    --gradient-card: linear-gradient(145deg, 
+        rgba(75, 0, 130, 0.9) 0%, 
+        rgba(106, 13, 173, 0.8) 25%, 
+        rgba(138, 43, 226, 0.7) 50%, 
+        rgba(153, 50, 204, 0.6) 75%, 
+        rgba(186, 85, 211, 0.5) 100%
+    );
+    
+    --gradient-hover: linear-gradient(135deg, 
+        #DDA0DD 0%, 
+        #BA55D3 15%, 
+        #9932CC 30%, 
+        #8A2BE2 45%, 
+        #6A0DAD 60%, 
+        #4B0082 75%, 
+        #301934 90%, 
+        #000000 100%
+    );
+    
+    --gradient-button: linear-gradient(90deg,
+        #BF00FF 0%,
+        #9932CC 20%,
+        #8A2BE2 40%,
+        #6A0DAD 60%,
+        #4B0082 80%,
+        #301934 100%
+    );
+    
+    --gradient-rainbow-purple: linear-gradient(90deg,
+        #E6E6FA,
+        #DDA0DD,
+        #BA55D3,
+        #9932CC,
+        #8B008B,
+        #6A0DAD,
+        #4B0082,
+        #301934,
+        #4B0082,
+        #6A0DAD,
+        #8B008B,
+        #9932CC,
+        #BA55D3,
+        #DDA0DD,
+        #E6E6FA
+    );
+    
+    /* Sombras moradas */
+    --shadow-purple: rgba(191, 0, 255, 0.4);
+    --shadow-violet: rgba(138, 43, 226, 0.3);
+    --shadow-deep: rgba(75, 0, 130, 0.5);
+}
+
+/* Animaciones dinámicas espectaculares */
+@keyframes purpleWave {
+    0% { 
+        background-position: 0% 50%;
+        transform: scale(1) rotate(0deg);
+    }
+    25% { 
+        background-position: 100% 0%;
+        transform: scale(1.02) rotate(1deg);
+    }
+    50% { 
+        background-position: 100% 100%;
+        transform: scale(1.01) rotate(0deg);
+    }
+    75% { 
+        background-position: 0% 100%;
+        transform: scale(1.02) rotate(-1deg);
+    }
+    100% { 
+        background-position: 0% 50%;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes purpleGlow {
+    0%, 100% { 
+        box-shadow: 0 0 20px var(--shadow-purple), 0 0 40px var(--shadow-violet);
+        filter: hue-rotate(0deg);
+    }
+    25% { 
+        box-shadow: 0 0 30px var(--shadow-violet), 0 0 60px var(--purple-neon);
+        filter: hue-rotate(15deg);
+    }
+    50% { 
+        box-shadow: 0 0 40px var(--purple-neon), 0 0 80px var(--shadow-purple);
+        filter: hue-rotate(30deg);
+    }
+    75% { 
+        box-shadow: 0 0 30px var(--shadow-deep), 0 0 60px var(--shadow-violet);
+        filter: hue-rotate(15deg);
+    }
+}
+
+@keyframes purpleFloat {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        box-shadow: 0 5px 15px var(--shadow-purple);
+    }
+    25% { 
+        transform: translateY(-20px) translateX(5px) rotate(2deg);
+        box-shadow: 0 25px 35px var(--shadow-violet);
+    }
+    50% { 
+        transform: translateY(-10px) translateX(-5px) rotate(-1deg);
+        box-shadow: 0 15px 25px var(--shadow-deep);
+    }
+    75% { 
+        transform: translateY(-25px) translateX(3px) rotate(1deg);
+        box-shadow: 0 30px 40px var(--shadow-purple);
+    }
+}
+
+@keyframes rainbowPurple {
+    0% { 
+        background: linear-gradient(45deg, #BF00FF, #9932CC, #8A2BE2);
+        transform: rotate(0deg);
+    }
+    20% { 
+        background: linear-gradient(45deg, #9932CC, #8A2BE2, #6A0DAD);
+        transform: rotate(72deg);
+    }
+    40% { 
+        background: linear-gradient(45deg, #8A2BE2, #6A0DAD, #4B0082);
+        transform: rotate(144deg);
+    }
+    60% { 
+        background: linear-gradient(45deg, #6A0DAD, #4B0082, #8B008B);
+        transform: rotate(216deg);
+    }
+    80% { 
+        background: linear-gradient(45deg, #4B0082, #8B008B, #BA55D3);
+        transform: rotate(288deg);
+    }
+    100% { 
+        background: linear-gradient(45deg, #8B008B, #BA55D3, #BF00FF);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes purplePulse {
+    0% { 
+        transform: scale(1);
+        background-size: 100% 100%;
+    }
+    50% { 
+        transform: scale(1.05);
+        background-size: 120% 120%;
+    }
+    100% { 
+        transform: scale(1);
+        background-size: 100% 100%;
+    }
+}
+
+/* Cuerpo principal con gradiente morado dinámico */
+body {
+    background: var(--gradient-main);
+    background-size: 400% 400%;
+    animation: purpleWave 15s ease infinite;
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efectos de fondo con patrones morados */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-rainbow-purple);
+    background-size: 800% 800%;
+    animation: purpleWave 25s ease infinite;
+    opacity: 0.05;
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, var(--shadow-purple) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--shadow-violet) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, var(--shadow-deep) 0%, transparent 50%);
+    animation: purpleFloat 20s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Navbar con gradiente morado dinámico */
+.navbar {
+    background: var(--gradient-card) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 3px solid var(--purple-neon);
+    box-shadow: 0 8px 32px var(--shadow-deep);
+    transition: all 0.3s ease;
+    animation: purpleGlow 8s ease infinite;
+}
+
+.navbar:hover {
+    border-bottom-color: var(--purple-bright);
+    box-shadow: 0 12px 40px var(--shadow-purple);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: var(--gradient-animated);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: purpleWave 10s ease infinite;
+    background-size: 400% 400%;
+    text-shadow: 0 0 10px var(--shadow-purple);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 5px 10px var(--shadow-purple));
+    animation: purpleGlow 2s ease infinite;
+}
+
+.navbar-text {
+    color: var(--purple-light) !important;
+    text-shadow: 0 0 5px var(--shadow-purple);
+    font-weight: 500;
+}
+
+/* Tarjetas con gradientes morados espectaculares */
+.card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--purple-neon);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 35px var(--shadow-deep),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: purpleFloat 8s ease-in-out infinite;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-rainbow-purple);
+    background-size: 200% 100%;
+    transition: left 0.8s ease;
+    opacity: 0.2;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 
+        0 30px 60px var(--shadow-purple),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: var(--purple-bright);
+    animation: purpleGlow 3s ease infinite;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card-header {
+    background: var(--gradient-button);
+    background-size: 300% 100%;
+    animation: purpleWave 12s ease infinite;
+    color: white;
+    border-radius: 20px 20px 0 0 !important;
+    border: none;
+    font-weight: 700;
+    text-shadow: 0 2px 4px var(--shadow-deep);
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-rainbow-purple);
+    background-size: 400% 100%;
+    animation: purpleWave 8s ease infinite;
+}
+
+.card-body {
+    color: #ffffff;
+    background: rgba(75, 0, 130, 0.2);
+    border-radius: 0 0 20px 20px;
+}
+
+/* Botones con gradientes morados dinámicos */
+.btn-primary {
+    background: var(--gradient-button);
+    background-size: 300% 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin: 3px;
+    box-shadow: 0 5px 15px var(--shadow-purple);
+    animation: purpleWave 15s ease infinite;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover {
+    background: var(--gradient-hover);
+    background-size: 400% 100%;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 20px 40px var(--shadow-purple);
+    animation: purpleGlow 2s infinite;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    border: 2px solid var(--purple-neon);
+    color: white;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: 3px;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--purple-bright), var(--purple-deep));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-purple);
+    color: white;
+    border-color: var(--purple-light);
+    animation: purplePulse 1s ease infinite;
+}
+
+.btn-outline-light {
+    border: 2px solid var(--purple-neon);
+    color: var(--purple-neon);
+    background: transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: 3px;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+}
+
+.btn-outline-light:hover {
+    background: var(--gradient-animated);
+    background-size: 200% 100%;
+    color: white;
+    box-shadow: 0 0 25px var(--purple-neon);
+    transform: translateY(-2px);
+    animation: purpleWave 3s ease infinite;
+}
+
+/* Botones de acción con gradientes morados */
+.btn-success {
+    background: linear-gradient(45deg, var(--purple-medium), var(--purple-bright));
+    border: none;
+    border-radius: 15px;
+    margin: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-violet);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-purple);
+    background: linear-gradient(45deg, var(--purple-bright), var(--purple-neon));
+    animation: purpleGlow 2s ease infinite;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, var(--purple-pastel), var(--purple-medium));
+    border: none;
+    border-radius: 15px;
+    margin: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-violet);
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-purple);
+    background: linear-gradient(45deg, var(--purple-medium), var(--purple-bright));
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, var(--purple-dark), var(--purple-deep));
+    border: none;
+    border-radius: 15px;
+    margin: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-deep);
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-deep);
+    background: linear-gradient(45deg, var(--purple-deep), var(--purple-midnight));
+    animation: purpleGlow 2s ease infinite;
+}
+
+.btn-info {
+    background: linear-gradient(45deg, var(--purple-violet), var(--purple-royal));
+    border: none;
+    border-radius: 15px;
+    margin: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-purple);
+}
+
+.btn-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-purple);
+    background: linear-gradient(45deg, var(--purple-royal), var(--purple-neon));
+}
+
+/* Formularios con efectos morados */
+.form-control, .form-select {
+    background: rgba(75, 0, 130, 0.3);
+    border: 2px solid var(--purple-medium);
+    border-radius: 12px;
+    color: white;
+    padding: 14px 18px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(75, 0, 130, 0.5);
+    border-color: var(--purple-neon);
+    box-shadow: 
+        0 0 0 0.25rem rgba(191, 0, 255, 0.25),
+        inset 0 0 20px var(--shadow-purple);
+    color: white;
+    transform: translateY(-2px);
+    animation: purpleGlow 3s ease infinite;
+}
+
+.form-control::placeholder {
+    color: rgba(230, 230, 250, 0.6);
+    font-style: italic;
+}
+
+.form-label {
+    color: var(--purple-light);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px var(--shadow-deep);
+    font-size: 1.05rem;
+}
+
+/* Alertas con gradientes morados */
+.alert {
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    border-left: 5px solid var(--purple-neon);
+    font-weight: 500;
+    animation: purpleFloat 6s ease-in-out infinite;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, rgba(139, 0, 139, 0.2), rgba(75, 0, 130, 0.1));
+    color: var(--purple-light);
+    border-left-color: var(--purple-dark);
+    box-shadow: 0 5px 15px var(--shadow-deep);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(186, 85, 211, 0.2), rgba(138, 43, 226, 0.1));
+    color: var(--purple-pastel);
+    border-left-color: var(--purple-medium);
+    box-shadow: 0 5px 15px var(--shadow-violet);
+}
+
+.alert-info {
+    background: linear-gradient(135deg, rgba(191, 0, 255, 0.2), rgba(153, 50, 204, 0.1));
+    color: var(--purple-light);
+    border-left-color: var(--purple-neon);
+    box-shadow: 0 5px 15px var(--shadow-purple);
+}
+
+/* Efectos para las tarjetas de películas */
+.movie-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-rainbow-purple);
+    background-size: 400% 400%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: purpleWave 20s ease infinite;
+}
+
+.movie-card:hover {
+    transform: translateY(-15px) rotateY(10deg) rotateX(5deg);
+    box-shadow: 
+        0 30px 60px var(--shadow-purple),
+        0 0 0 1px var(--purple-neon);
+    animation: purpleGlow 3s ease infinite;
+}
+
+.movie-card:hover::before {
+    opacity: 0.1;
+}
+
+/* Texto con efectos morados */
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 2px 4px var(--shadow-deep);
+    color: #ffffff;
+    font-weight: 700;
+    background: var(--gradient-animated);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: purpleWave 8s ease infinite;
+}
+
+/* Párrafos y texto general */
+p, .card-text {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+    font-weight: 400;
+    text-shadow: 0 1px 2px var(--shadow-deep);
+}
+
+/* Scrollbar con tema morado */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--purple-midnight);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-button);
+    border-radius: 10px;
+    border: 2px solid var(--purple-midnight);
+    animation: purpleWave 10s ease infinite;
+    background-size: 200% 100%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-hover);
+    animation: purpleGlow 2s ease infinite;
+}
+
+/* Animación de carga mejorada */
+.fade-in {
+    animation: fadeInPurple 0.8s ease forwards;
+}
+
+@keyframes fadeInPurple {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+        filter: hue-rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Efectos especiales para tablas */
+.table {
+    background: var(--gradient-card);
+    color: white;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px var(--shadow-deep);
+}
+
+.table th {
+    background: var(--gradient-button);
+    background-size: 200% 100%;
+    animation: purpleWave 15s ease infinite;
+    border: none;
+    color: white;
+    text-shadow: 0 1px 2px var(--shadow-deep);
+    font-weight: 700;
+}
+
+.table td {
+    border-color: var(--purple-medium);
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(191, 0, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Estilos para el logo SVG mejorados */
+.navbar-brand img {
+    filter: brightness(1.2) contrast(1.1) drop-shadow(0 0 10px var(--shadow-purple));
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.navbar-brand:hover img {
+    filter: brightness(1.4) contrast(1.2) drop-shadow(0 0 20px var(--purple-neon));
+    transform: scale(1.1) rotate(5deg);
+    animation: purpleGlow 2s ease infinite;
+}
+
+/* Logo en la página principal */
+.text-center img {
+    filter: drop-shadow(0 0 30px var(--shadow-purple));
+    transition: all 0.4s ease;
+    border-radius: 15px;
+}
+
+.text-center img:hover {
+    filter: drop-shadow(0 0 50px var(--purple-neon));
+    transform: scale(1.08) rotate(-2deg);
+    animation: rainbowPurple 3s ease infinite;
+}
+
+/* Responsive design mejorado */
+@media (max-width: 768px) {
+    .card {
+        margin: 8px;
+        border-radius: 15px;
+        animation: purpleFloat 10s ease-in-out infinite;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    body::before {
+        animation-duration: 30s;
+    }
+    
+    .btn {
+        margin: 2px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .movie-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        border-radius: 12px;
+    }
+    
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Efectos adicionales para enlaces */
+a {
+    color: var(--purple-neon);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--purple-light);
+    text-shadow: 0 0 8px var(--purple-neon);
+    transform: translateY(-1px);
+}
+
+/* Container con padding mejorado */
+.container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* Efectos de loading/spinner morados */
+.spinner-border {
+    border-color: var(--purple-neon);
+    border-right-color: transparent;
+    animation: spin 1s linear infinite, purpleGlow 2s ease infinite;
+}
+
+/* Tooltips con tema morado */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip-inner {
+    background: var(--gradient-card);
+    border: 1px solid var(--purple-neon);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+/* Modales con efecto morado */
+.modal-content {
+    background: var(--gradient-card);
+    border: 2px solid var(--purple-medium);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--purple-neon);
+    background: var(--gradient-button);
+    background-size: 200% 100%;
+    animation: purpleWave 12s ease infinite;
+}
+
+.modal-footer {
+    border-top: 2px solid var(--purple-neon);
+}
+
+/* Badges y etiquetas moradas */
+.badge {
+    background: var(--gradient-button);
+    background-size: 200% 100%;
+    animation: purpleWave 10s ease infinite;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 6px 12px;
+}
+
+/* Progress bars moradas */
+.progress {
+    background: var(--purple-midnight);
+    border-radius: 10px;
+    height: 8px;
+}
+
+.progress-bar {
+    background: var(--gradient-animated);
+    background-size: 200% 100%;
+    animation: purpleWave 8s ease infinite;
+    border-radius: 10px;
+}

@@ -1,0 +1,418 @@
+/* 🎬 CINEPEDIA - Diseño Personalizado Morado-Negro Dinámico */
+
+/* Variables CSS para colores personalizados */
+:root {
+    --primary-purple: #6a0dad;
+    --secondary-purple: #9b59b6;
+    --dark-purple: #4a0e4e;
+    --deep-black: #1a1a1a;
+    --neon-purple: #bf00ff;
+    --light-purple: #e8d5ff;
+    --gradient-main: linear-gradient(135deg, #000000 0%, #4a0e4e 25%, #/* Estilos para el logo SVG */
+.navbar-brand img {
+    filter: brightness(1.2);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    filter: brightness(1.4) drop-shadow(0 0 10px rgba(191, 0, 255, 0.6));
+    transform: scale(1.05);
+}
+
+/* Logo en la página principal */
+.text-center img {
+    filter: drop-shadow(0 0 20px rgba(191, 0, 255, 0.4));
+    transition: all 0.3s ease;
+}
+
+.text-center img:hover {
+    filter: drop-shadow(0 0 30px rgba(191, 0, 255, 0.8));
+    transform: scale(1.02);
+}
+
+/* Efectos adicionales para enlaces */
+a {0dad 50%, #9b59b6 75%, #bf00ff 100%);
+    --gradient-hover: linear-gradient(135deg, #bf00ff 0%, #9b59b6 25%, #6a0dad 50%, #4a0e4e 75%, #000000 100%);
+}
+
+/* Animaciones dinámicas */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(191, 0, 255, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(191, 0, 255, 0.6); }
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Cuerpo principal con degradado animado */
+body {
+    background: var(--gradient-main);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efecto de partículas de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(191, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(106, 13, 173, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(155, 89, 182, 0.05) 0%, transparent 50%);
+    animation: floatAnimation 20s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Navbar con efecto cristal */
+.navbar {
+    background: rgba(26, 26, 26, 0.9) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid var(--neon-purple);
+    box-shadow: 0 8px 32px rgba(191, 0, 255, 0.2);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    background: var(--gradient-main);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease infinite;
+    background-size: 400% 400%;
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.5);
+}
+
+.navbar-text {
+    color: var(--light-purple) !important;
+    text-shadow: 0 0 5px rgba(191, 0, 255, 0.3);
+}
+
+/* Tarjetas con efecto glassmorphism */
+.card {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(191, 0, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: floatAnimation 6s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 25px 50px rgba(191, 0, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: var(--neon-purple);
+}
+
+.card-header {
+    background: var(--gradient-main);
+    color: white;
+    border-radius: 20px 20px 0 0 !important;
+    border: none;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+    color: #ffffff;
+}
+
+/* Botones con efectos dinámicos */
+.btn-primary {
+    background: var(--gradient-main);
+    background-size: 400% 400%;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin: 2px;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.btn-primary:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(191, 0, 255, 0.4);
+    animation: pulseGlow 2s infinite;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    background: rgba(74, 14, 78, 0.8);
+    border: 2px solid var(--secondary-purple);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin: 2px;
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
+    color: white;
+}
+
+.btn-outline-light {
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-purple);
+    background: transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin: 2px;
+}
+
+.btn-outline-light:hover {
+    background: var(--neon-purple);
+    color: white;
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.6);
+}
+
+/* Botones de acción especiales */
+.btn-success {
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    border: none;
+    border-radius: 12px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 210, 255, 0.4);
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    border: none;
+    border-radius: 12px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 147, 251, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 12px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+}
+
+/* Formularios con efectos especiales */
+.form-control, .form-select {
+    background: rgba(26, 26, 26, 0.7);
+    border: 2px solid rgba(191, 0, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(26, 26, 26, 0.9);
+    border-color: var(--neon-purple);
+    box-shadow: 
+        0 0 0 0.25rem rgba(191, 0, 255, 0.25),
+        inset 0 0 20px rgba(191, 0, 255, 0.1);
+    color: white;
+}
+
+.form-control::placeholder {
+    color: rgba(232, 213, 255, 0.6);
+}
+
+.form-label {
+    color: var(--light-purple);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Alertas personalizadas */
+.alert {
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--neon-purple);
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.15);
+    color: #ff6b6b;
+    border-left-color: #ff6b6b;
+}
+
+.alert-success {
+    background: rgba(25, 135, 84, 0.15);
+    color: #51cf66;
+    border-left-color: #51cf66;
+}
+
+/* Efectos para las tarjetas de películas */
+.movie-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px) rotateY(5deg);
+    box-shadow: 
+        0 20px 40px rgba(191, 0, 255, 0.3),
+        0 0 0 1px rgba(191, 0, 255, 0.2);
+}
+
+/* Texto con efectos especiales */
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* Párrafos y texto general */
+p, .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-main);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-hover);
+}
+
+/* Animación de carga para elementos */
+.fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efectos especiales para tablas */
+.table {
+    background: rgba(26, 26, 26, 0.7);
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table th {
+    background: var(--gradient-main);
+    border: none;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.table td {
+    border-color: rgba(191, 0, 255, 0.2);
+}
+
+/* Responsive design mejorado */
+@media (max-width: 768px) {
+    .card {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+    
+    body::before {
+        animation-duration: 25s;
+    }
+    
+    .btn {
+        margin: 1px;
+        padding: 8px 16px;
+    }
+}
+
+/* Efectos adicionales para enlaces */
+a {
+    color: var(--light-purple);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px rgba(191, 0, 255, 0.5);
+}
+
+/* Contenedor principal con padding */
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

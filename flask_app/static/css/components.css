@@ -1,0 +1,206 @@
+
+
+/* === STYLES === */
+.header-subtitle {
+    text-align: center;
+    color: var(--purple-glow);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--purple-glow);
+    font-size: 1.1rem;
+    margin: 10px 0 0 0;
+}
+
+/* === SECTION HEADERS === */
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: var(--purple-glow);
+    margin: 0;
+}
+
+/* === LAYOUT HELPERS === */
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.center-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.center-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* === BUTTON VARIANTS === */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.2);
+}
+
+.btn-edit {
+    background: var(--purple-medium);
+}
+
+.btn-delete {
+    background: #c62828;
+}
+
+.btn-no-margin {
+    margin: 0;
+}
+
+/* === TEXT STYLES === */
+.text-purple {
+    color: var(--purple-glow);
+    margin: 5px 0;
+}
+
+.text-white {
+    color: var(--white);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.text-muted {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+}
+
+.text-center-muted {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* === CONTENT BOXES === */
+.synopsis-box {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.alert-comment {
+    background: rgba(156, 39, 176, 0.2);
+}
+
+/* === COMMENT STYLES === */
+.comment-form {
+    margin-bottom: 30px;
+}
+
+.comment-flex {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.comment-input-wrapper {
+    flex: 1;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+}
+
+.comments-separator {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+}
+
+.comment-item {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--purple-accent);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-author {
+    color: var(--purple-glow);
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.comment-text {
+    color: var(--white);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.comment-delete {
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #c62828;
+    margin-left: 10px;
+}
+
+/* === FOOTER STYLES === */
+.footer-main {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.footer-text {
+    color: var(--purple-glow);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* === MOVIE CARD EXTENSIONS === */
+.card-margin-top {
+    margin-top: 20px;
+}
+
+/* === EMPTY STATE === */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty-state h4 {
+    color: var(--purple-glow);
+}
+
+.empty-state p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+}
